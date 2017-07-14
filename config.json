@@ -1,0 +1,36 @@
+{
+    "server": {
+        "port": 8080,
+        "read_timeout": 5,
+        "write_timeout": 30
+    },
+    "statsd": {
+      "host": "0",
+      "port": 12345
+    },
+    "sources": {
+        "default": {
+            "type": "filesystem",
+            "directory": "/tmp"
+        },
+        "magento2": {
+            "directory": "/halfshell/magento2"
+        }
+    },
+    "processors": {
+        "default": {
+            "image_compression_quality": 85,
+            "default_scale_mode": "aspect_fit",
+            "max_blur_radius_percentage": 0,
+            "max_image_height": 1000,
+            "max_image_width": 1000
+        }
+    },
+    "routes": {
+        "^/i(?P<image_path>/.*)$": {
+            "name": "magento2",
+            "source": "magento2",
+            "processor": "default"
+        }
+    }
+}

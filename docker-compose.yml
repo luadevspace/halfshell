@@ -1,0 +1,7 @@
+version: "2"
+
+services:
+  halfshell:
+    image: halfshell:latest
+    ports:
+      - 8080:8080

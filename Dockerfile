@@ -1,7 +1,7 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Rafik Salama <rafik@oysterbooks.com>
 
-WORKDIR /opt/go/src/github.com/oysterbooks/halfshell
+WORKDIR /opt/go/src/github.com/rafikk/halfshell
 ENV GOPATH /opt/go
 
 RUN apt-get update && apt-get install -qy \
@@ -13,9 +13,11 @@ RUN apt-get update && apt-get install -qy \
     imagemagick \
     golang
 
-ADD . /opt/go/src/github.com/oysterbooks/halfshell
-RUN cd /opt/go/src/github.com/oysterbooks/halfshell && make deps && make build
+RUN mkdir -p /halfshell/magento2
+COPY . /opt/go/src/github.com/rafikk/halfshell
+RUN cd /opt/go/src/github.com/rafikk/halfshell && make deps && make build
 
-ENTRYPOINT ["/opt/go/src/github.com/oysterbooks/halfshell/bin/halfshell"]
+
+ENTRYPOINT ["/opt/go/src/github.com/rafikk/halfshell/bin/halfshell", "/opt/go/src/github.com/rafikk/halfshell/config.json"]
 
 EXPOSE 8080
