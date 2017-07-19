@@ -28,7 +28,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/rafikk/imagick/imagick"
+	"github.com/luadevspace/imagick/imagick"
 )
 
 var EmptyImageDimensions = ImageDimensions{}

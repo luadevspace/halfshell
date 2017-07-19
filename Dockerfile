@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
-MAINTAINER Rafik Salama <rafik@oysterbooks.com>
+MAINTAINER Eduardo Leal <eleal@lua.net>
 
-WORKDIR /opt/go/src/github.com/rafikk/halfshell
+WORKDIR /opt/go/src/github.com/luadevspace/halfshell
 ENV GOPATH /opt/go
 
 RUN apt-get update && apt-get install -qy \
@@ -14,10 +14,10 @@ RUN apt-get update && apt-get install -qy \
     golang
 
 RUN mkdir -p /halfshell/magento2
-COPY . /opt/go/src/github.com/rafikk/halfshell
-RUN cd /opt/go/src/github.com/rafikk/halfshell && make deps && make build
+COPY . /opt/go/src/github.com/luadevspace/halfshell
+RUN cd /opt/go/src/github.com/luadevspace/halfshell && make deps && make build
 
 
-ENTRYPOINT ["/opt/go/src/github.com/rafikk/halfshell/bin/halfshell", "/opt/go/src/github.com/rafikk/halfshell/config.json"]
+ENTRYPOINT ["/opt/go/src/github.com/luadevspace/halfshell/bin/halfshell", "/opt/go/src/github.com/luadevspace/halfshell/config.json"]
 
 EXPOSE 8080

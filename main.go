@@ -22,7 +22,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/rafikk/halfshell/halfshell"
+	"github.com/luadevspace/halfshell/halfshell"
 	"os"
 )
 

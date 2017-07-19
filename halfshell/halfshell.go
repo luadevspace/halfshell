@@ -24,7 +24,7 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/rafikk/imagick/imagick"
+	"github.com/luadevspace/imagick/imagick"
 )
 
 // Halfshell is the primary struct of the program. It holds onto the

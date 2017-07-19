@@ -23,7 +23,7 @@ package halfshell
 import (
 	"math"
 
-	"github.com/rafikk/imagick/imagick"
+	"github.com/luadevspace/imagick/imagick"
 )
 
 const (

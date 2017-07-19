@@ -20,8 +20,8 @@
     "processors": {
         "default": {
             "image_compression_quality": 85,
-            "default_scale_mode": "aspect_fit",
-            "max_blur_radius_percentage": 0,
+            "default_scale_mode": "aspest_fit",
+            "max_blur_radius_percentage": 1,
             "max_image_height": 1000,
             "max_image_width": 1000
         }
